@@ -1,10 +1,8 @@
-# xparents
-
-> 家长端
+# 多页面改造
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
