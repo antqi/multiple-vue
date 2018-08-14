@@ -12,7 +12,7 @@ const portfinder = require('portfinder')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
-
+console.log(path.posix.join(config.dev.assetsPublicPath))
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
@@ -25,7 +25,18 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
-        { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') }
+        {
+          from: /^\/$/,
+          to: path.posix.join(config.dev.assetsPublicPath, 'one.html')
+        },
+        {
+          from: /^\/one.*$/,
+          to: path.posix.join(config.dev.assetsPublicPath, 'one.html')
+        },
+        {
+          from: /^\/two.*$/,
+          to: path.posix.join(config.dev.assetsPublicPath, 'two.html')
+        }
       ]
     },
     hot: true,

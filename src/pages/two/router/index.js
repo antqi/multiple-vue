@@ -9,16 +9,15 @@ const router = new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
+      path: '/two',
+      redirect: '/two/hello'
+    },
+    {
+      path: '/two/hello',
       component: Hello
     },
     {
-      path: '/hello',
-      component: Hello
-    },
-    {
-      path: '/world',
+      path: '/two/world',
       component: World
     }
   ]
