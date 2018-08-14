@@ -105,7 +105,7 @@ exports.createNotifierCallback = () => {
 }
 
 // 配置多入口
-exports.entries = function () {
+exports.entries =  () => {
   const entryFiles = glob.sync(`${PAGE_PATH}/*/*.js`)
   const map = {}
   entryFiles.forEach((filePath) => {
@@ -117,7 +117,7 @@ exports.entries = function () {
 }
 
 // 多页面输出
-exports.htmlsPlugin = function () {
+exports.htmlsPlugin =  () => {
   let entryHtmls = glob.sync(`${PAGE_PATH}/*/*.html`)
   let arr = []
 
